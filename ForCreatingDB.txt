@@ -47,5 +47,6 @@ For creating the project's tables in the database:
 
     php artisan migrate
 
+For starting the streaming at http://localhost:8000
 
-
+    php artisan serve
