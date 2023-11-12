@@ -1,0 +1,51 @@
+For creating the test localhost database for this proyect, try the following:
+
+All commands are run in bash
+
+For downloading the project:
+
+    git clone git@github.com:Erikzilla/LaravelProy.git
+
+If mySQL is not installed yet:
+
+    sudo apt update
+    sudo apt install mysql-server
+    sudo mysql_secure_installation
+
+For creating the DB for the project:
+
+    sudo mysql
+    CREATE DATABASE laravelDB;
+    CREATE USER 'laraUser1'@'%' IDENTIFIED WITH mysql_native_password BY 'Lara1!?z';
+    GRANT ALL ON laravelDB.* TO 'laraUser1'@'%';
+
+For visualizing the tables in the DB:
+
+    sudo mysql
+    use laravelDB;
+    show tables;
+
+For visualizing the tables:
+
+    sudo mysql
+    use laravelDB;
+    SELECT * FROM <table name>;
+
+If php is not installed yet:
+
+    sudo apt install php php-mysql
+
+If composer is not installed yet: (check https://getcomposer.org/download/):
+
+    php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+    php composer-setup.php
+    php -r "unlink('composer-setup.php');"
+    sudo mv composer.phar /usr/local/bin/composer
+
+For creating the project's tables in the database:
+
+    php artisan migrate
+
+
+
